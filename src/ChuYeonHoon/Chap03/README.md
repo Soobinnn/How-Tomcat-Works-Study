@@ -191,33 +191,43 @@ protected ParameterMap parameters = null;
 4. 쿠키의 파싱
 5. 파라미터 얻기
 
+<br/>
+
 **1. 소켓의 입력스트림 값 읽기**
 
-// 메소드, URI, HTTP 버전 정보를 담고 있는 요청 라인은 `java.io.InputStream` 클래스의 read 메소드를 써서 얻을 수 있다.
+- 메소드, URI, HTTP 버전 정보를 담고 있는 요청 라인은 `java.io.InputStream` 클래스의 read 메소드를 써서 얻을 수 있다.
 
-// readRequestLine과 readHeader 메소드를 사용하기 위해 `SocketInputStream`을 사용한다.
+- readRequestLine과 readHeader 메소드를 사용하기 위해 `SocketInputStream`을 사용한다.
 
-// `SocketInputStream` 인스턴스는 `InputStream` 객체와 사용할 버퍼 크기를 나타내는 정수 값을 전달해 생성한다.
+- `SocketInputStream` 인스턴스는 `InputStream` 객체와 사용할 버퍼 크기를 나타내는 정수 값을 전달해 생성한다.
+
+<br/>
 
 **2. 요청 라인의 파싱**
 
-// `HttpProcessor`의 process 메소드는 HTTP 요청의 첫 줄의 내용을 파싱하려는 목적으로 parseRequest 메소드를 호출한다.
+- `HttpProcessor`의 process 메소드는 HTTP 요청의 첫 줄의 내용을 파싱하려는 목적으로 parseRequest 메소드를 호출한다.
+
+<br/>
 
 **3. 헤더의 파싱**
 
-// HTTP 헤더는 `HttpHeader` 클래스로 나타낸다. `HttpHeader` 인스턴스는 파라미터가 없는 디폴트 생성자를 호출함으로써 생성 가능하다.
+- HTTP 헤더는 `HttpHeader` 클래스로 나타낸다. `HttpHeader` 인스턴스는 파라미터가 없는 디폴트 생성자를 호출함으로써 생성 가능하다.
 
-// `HttpHeader` 인스턴스는 `SocketInputStream`의 readHeader 메소드로 전달할 수 있다.
+- `HttpHeader` 인스턴스는 `SocketInputStream`의 readHeader 메소드로 전달할 수 있다.
+
+<br/>
 
 **4. 쿠키의 파싱**
 
-// 쿠키는 브라우저가 HTTP 요청 헤더로서 서버로 전송한다. 이 헤더명은 "Cookie"이며, 그 값은 둘 이상의 쿠키의 이름/값 쌍이 된다.
+- 쿠키는 브라우저가 HTTP 요청 헤더로서 서버로 전송한다. 이 헤더명은 "Cookie"이며, 그 값은 둘 이상의 쿠키의 이름/값 쌍이 된다.
+
+<br/>
 
 **5. 파라미터 얻기**
 
-// `HttpRequest` 클래스에 있는 파라미터 메소드의 구현은 항상 자신의 parseParameters 메소드를 먼저 호출함으로써 시작된다.
+- `HttpRequest` 클래스에 있는 파라미터 메소드의 구현은 항상 자신의 parseParameters 메소드를 먼저 호출함으로써 시작된다.
 
-// 서블릿 프로그래머는 파라미터 값을 변경할 수 없어야 한다. 이러한 이유로 파라미터는 일반적인 `HashMap` 대신, `org.apache.catalina.util.ParameterMap`이라는 특별한 HashMap에 저장된다.
+- 서블릿 프로그래머는 파라미터 값을 변경할 수 없어야 한다. 이러한 이유로 파라미터는 일반적인 `HashMap` 대신, `org.apache.catalina.util.ParameterMap`이라는 특별한 HashMap에 저장된다.
 
 > `ParameterMap` 클래스는 `java.util.HashMap` 을 확장하고, locked라는 boolean 타입의 필드를 갖고 있다. 파라미터 이름/값 쌍을 추가, 갱신, 제거하려면 locked의 값은 반드시 false이어야 한다. locked의 값이 true일 때 그와 같은 조작을 시도하면 `IllegalStateException`이 던져진다. 그러나 파라미터 값을 읽는 것은 언제든지 가능하다.
 
