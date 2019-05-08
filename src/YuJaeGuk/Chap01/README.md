@@ -184,6 +184,9 @@ Welcome to Brainy Software
 ### 참고 문헌
 
 [https://ko.wikipedia.org/wiki/HTTP]
+
 [https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html]
+
 [https://docs.oracle.com/javase/8/docs/api/java/net/Socket.html]
+
 [https://docs.oracle.com/javase/8/docs/api/java/net/ServerSocket.html]
