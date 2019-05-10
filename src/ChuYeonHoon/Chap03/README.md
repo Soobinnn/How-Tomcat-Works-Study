@@ -173,7 +173,7 @@ public void process(Socket socket){
 
 <br/>
 
-#### HttpRequest 객체 생성하긔
+#### HttpRequest 객체 생성허긔
 
 - `HttpRequest` 클래스에 들어오는 HTTP 요청의 헤더, 쿠키 및 파라미터 값은 다음의 참조 변수에 저장 된다.
 
@@ -207,6 +207,14 @@ protected ParameterMap parameters = null;
 
 - `HttpProcessor`의 process 메소드는 HTTP 요청의 첫 줄의 내용을 파싱하려는 목적으로 parseRequest 메소드를 호출한다.
 
+- parseRequest 메소드가 요청 라인의 HTTP 메소드, URI, 프로토콜 정보, 질의문, jsessionid을 추출한다.
+
+- parseReqeust 메소드는 uri를 normalize 메소드에 넘겨 비정상적인 URI를 바로 잡는다. 예를 들어 역슬래시(\\)는 모두 슬래시(/)로 바뀐다.
+
+```java
+
+```
+
 <br/>
 
 **3. 헤더의 파싱**
@@ -233,7 +241,7 @@ protected ParameterMap parameters = null;
 
 <br/>
 
-#### HttpResponse 객체 생성하긔
+#### HttpResponse 객체 생성허긔
 
 - `HttpResponse` 클래스는 `javax.servlet.http.HttpServletResponse` 인터페이스를 구현한 것이다.
 
