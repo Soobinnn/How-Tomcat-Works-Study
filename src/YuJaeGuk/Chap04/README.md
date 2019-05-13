@@ -47,6 +47,8 @@
 
 ## 톰캣의 기본 커넥터
 
+여기서 Connector는 톰캣 혼자서(아파치-와 같은 웹서버 없이) 구동되어서 하나의 웹서버로서 활용 되기 위한 용도의 Connector
+
 서블릿 컨테이너에 플러그인이 될 수 있는 독립적인 모듈.
 
 코요테, mod_jk, mod_jk2, mod_webapp와 같은 다양한 커넥터가 존재함
@@ -123,9 +125,22 @@ p a tree. --> 총 9바이트
 
 ### 100 상태 코드의 사용
 
-HTTP 1.1 클라이언트  Expect: 100-continue 헤더를 전송해 요청 본체를 전송하기에 앞서 서버측의 승인을 기다릴 수 있다. 이 방법은 클라이언트가 전송하고자 하는 요청 본체의 양이 많을 경우, 서버가 이를 받아들일 수 있는지 먼저 확인하고자 할 때 흔히 사용함. 서버가 데이터 수신 거절 여부를 알아보고자 클라이언트가 요청 본체 자체를 바로 전송한다면 이는 굉장한 낭비가 될 것임.
-### 참고 문헌
+HTTP 1.1 클라이언트에서는 서버에게 데이터 수신 거절 여부를 알아보고자 Request Body를 전송하는 낭비를 없애기 위해, Expect: 100-continue 헤더를 전송해 Request Body를 전송하기에 앞서 서버측의 승인을 기다림. 이 방법은 클라이언트가 전송하고자 하는 요청 본체의 양이 많을 경우, 서버가 이를 받아들일 수 있는지 먼저 확인하고자 할 때 흔히 사용함.
 
-[https://kshmc.tistory.com/entry/Apache-Tomcat-%EC%97%B0%EB%8F%99%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0]
+~~~
+클라이언트 -> Expect: 100-continue 데이터를 보내도 될까요?
+서버 -> HTTP/1.1 100 Continue 네, 보내세요
+~~~
 
-[https://f10024.tistory.com/7]
+<br>
+
+## Connector 인터페이스
+커넥터는 반드시 org.apache.catalina.Connector 인터페이스를 구현해야 함.
+
+주로 컨테이너를 연결할 때 사용하는 setContainer, 커넥터와 연결되어있는 컨테이너를 리턴하는 getContainer, HTTP Request에 대한 Request Object를 생성하는 createRequest, Response Object를 생성하는 createResponse가 있다.
+
+<br>
+
+## HttpConnector 클래스
+
+3장의 커넥터와는 다르게 카타리나에서 적절히 동작하기 위해 java.lang.Runnable, org.apache.catalina.Lifecycle을 구현해야 함.
