@@ -9,6 +9,7 @@ import javax.servlet.ServletOutputStream;
 public class ResponseFacade implements ServletResponse {
 
   private ServletResponse response;
+  
   public ResponseFacade(Response response) {
     this.response = response;
   }

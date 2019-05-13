@@ -31,11 +31,15 @@ public class Request implements ServletRequest
   {
     int index1, index2;
     index1 = requestString.indexOf(' ');
+    System.out.println("인덱스 테스트"+index1);
     if (index1 != -1) 
     {
       index2 = requestString.indexOf(' ', index1 + 1);
       if (index2 > index1)
-        return requestString.substring(index1 + 1, index2);
+      {
+    	  System.out.println("인덱스 테스트2"+requestString.substring(index1 + 1, index2));
+    	  return requestString.substring(index1 + 1, index2);
+      }
     }
     return null;
   }

@@ -10,60 +10,74 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletInputStream;
 import javax.servlet.ServletRequest;
 
-public class RequestFacade implements ServletRequest {
+public class RequestFacade implements ServletRequest 
+{
 
   private ServletRequest request = null;
 
-  public RequestFacade(Request request) {
+  public RequestFacade(Request request) 
+  {
     this.request = request;
   }
 
   /* implementation of the ServletRequest*/
-  public Object getAttribute(String attribute) {
+  public Object getAttribute(String attribute) 
+  {
     return request.getAttribute(attribute);
   }
 
-  public Enumeration getAttributeNames() {
+  public Enumeration getAttributeNames() 
+  {
     return request.getAttributeNames();
   }
 
-  public String getRealPath(String path) {
+  public String getRealPath(String path) 
+  {
     return request.getRealPath(path);
   }
 
-  public RequestDispatcher getRequestDispatcher(String path) {
+  public RequestDispatcher getRequestDispatcher(String path) 
+  {
     return request.getRequestDispatcher(path);
   }
 
-  public boolean isSecure() {
+  public boolean isSecure() 
+  {
     return request.isSecure();
   }
 
-  public String getCharacterEncoding() {
+  public String getCharacterEncoding() 
+  {
     return request.getCharacterEncoding();
   }
 
-  public int getContentLength() {
+  public int getContentLength() 
+  {
     return request.getContentLength();
   }
 
-  public String getContentType() {
+  public String getContentType() 
+  {
     return request.getContentType();
   }
 
-  public ServletInputStream getInputStream() throws IOException {
+  public ServletInputStream getInputStream() throws IOException 
+  {
     return request.getInputStream();
   }
 
-  public Locale getLocale() {
+  public Locale getLocale() 
+  {
     return request.getLocale();
   }
 
-  public Enumeration getLocales() {
+  public Enumeration getLocales() 
+  {
     return request.getLocales();
   }
 
-  public String getParameter(String name) {
+  public String getParameter(String name) 
+  {
     return request.getParameter(name);
   }
 

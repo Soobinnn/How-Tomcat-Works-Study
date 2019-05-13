@@ -9,16 +9,19 @@ import javax.servlet.Servlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class ServletProcessor2 {
+public class ServletProcessor2 
+{
 
-  public void process(Request request, Response response) {
+  public void process(Request request, Response response) 
+  {
 
     String uri = request.getUri();
     String servletName = uri.substring(uri.lastIndexOf("/") + 1);
     URLClassLoader loader = null;
 
-    try {
-      // create a URLClassLoader
+    try 
+    {
+      // URLClassLoader 생성
       URL[] urls = new URL[1];
       URLStreamHandler streamHandler = null;
       File classPath = new File(Constants.WEB_ROOT);
@@ -30,28 +33,35 @@ public class ServletProcessor2 {
       urls[0] = new URL(null, repository, streamHandler);
       loader = new URLClassLoader(urls);
     }
-    catch (IOException e) {
+    catch (IOException e) 
+    {
       System.out.println(e.toString() );
     }
     Class myClass = null;
-    try {
+    try 
+    {
       myClass = loader.loadClass(servletName);
     }
-    catch (ClassNotFoundException e) {
+    catch (ClassNotFoundException e) 
+    {
       System.out.println(e.toString());
     }
 
     Servlet servlet = null;
     RequestFacade requestFacade = new RequestFacade(request);
     ResponseFacade responseFacade = new ResponseFacade(response);
-    try {
+    
+    try 
+    {
       servlet = (Servlet) myClass.newInstance();
       servlet.service((ServletRequest) requestFacade, (ServletResponse) responseFacade);
     }
-    catch (Exception e) {
+    catch (Exception e) 
+    {
       System.out.println(e.toString());
     }
-    catch (Throwable e) {
+    catch (Throwable e) 
+    {
       System.out.println(e.toString());
     }
 

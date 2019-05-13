@@ -74,7 +74,7 @@ public class HttpServer1
           StaticResourceProcessor processor = new StaticResourceProcessor();
           processor.process(request, response);
         }
-
+        
         // 소켓 닫기
         socket.close();
         // URL이 종료 명령이었는지 확인
