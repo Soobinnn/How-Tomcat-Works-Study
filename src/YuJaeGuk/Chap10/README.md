@@ -71,6 +71,8 @@ public boolean hasRole(String role){
 
 ### loginConfig (로그인 설정)
 
+![](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/YuJaeGuk/Chap10/LoginConfig.png)
+
 톰캣은 시작시 web.xml 파일을 읽어들이며, web.xml 파일에 login-config 요소를 포함하고 있으며 그 특성을 설정함.
 
 ~~~
