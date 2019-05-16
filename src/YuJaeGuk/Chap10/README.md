@@ -69,6 +69,8 @@ public boolean hasRole(String role){
   return (Arrays.binarySearch(roles, role) >= 0);
 ~~~
 
+<br>
+
 ### loginConfig (로그인 설정)
 
 ![](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/YuJaeGuk/Chap10/LoginConfig.png)
