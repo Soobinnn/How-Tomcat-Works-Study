@@ -95,5 +95,6 @@ web.xml
 
 org.apache.catalina.Authenticator 인터페이스는 인증자를 대변하며, 이 인터페이스는 아무런 메소드를 가지고 있지 않은 마커 인터페이스로 다른 컴포넌트가 어떤 컴포넌트에 대해 instance of를 수행해 그 컴포넌트가 인증자인지 여부를 확인하는 역할을 함.
 
+<br>
 
-https://sumin172.tistory.com/136
+마커 인터페이스 참고 - https://sumin172.tistory.com/136
