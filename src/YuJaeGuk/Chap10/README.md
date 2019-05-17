@@ -14,7 +14,7 @@
 
 서블릿 컨테이너가 구동될 때 인증자 밸브는 컨텍스트의 파이프라인에 추가되고, 래퍼 밸브보다 이전에 호출되어.
 
-사용자가 올바른 사용자 이름과 암호를 입력했다면 인증자 밸브는 요청을 처리할 다음 밸브를 호출하고, 인증에 실패하면 인증자 밸브는 다음 밸브를 호출하지 않고 리턴되어 사용자는 요청한 서블릿을 볼 수 없음
+사용자가 올바른 사용자 이름과 암호를 입력했다면 인증자 밸브는 요청을 처리할 다음 밸브를 호출하고, 인증에 실패하면 인증자 밸브는 다음 밸브를 호출하지 않고 리턴되어 사용자는 요청한 서블릿을 볼 수 없음.
 
 이 과정에서 인증자 밸브는 유효한 사용자 이름과 암호의 집합을 가지고 있는 영역(Realm) 컴포넌트에 존재하는 authenticate 메소드에 사용자 이름과 암호를 전달하여 호출.
 
@@ -32,14 +32,14 @@ Realm은 사용자를 인증하는 데 필요한 컴포넌트.
 보통 톰캣에서는 tomcat-users.xml 파일에 저장하지만, 관계형 데이터베이스 같은 다른 자원을 이용해 인증할 수 있는 영역을 구현할 수 있다.
 ~~~
 
-카탈리나에서는 "org.apache.catalina.Realm" 인터페이스로 대변되며, 이 인터페이스의 가장 중요한 4개의 메소드는 주체를 리턴받는 authenticate 메소드를 가지고 있음
+카탈리나에서는 "org.apache.catalina.Realm" 인터페이스로 대변되며, 이 인터페이스의 가장 중요한 4개의 메소드는 주체를 리턴받는 authenticate 메소드를 가지고 있음.
 
 ~~~
-public principal authenticate(String username, String credentials);
-.
-.
-
-public boolean hasRole(Principal principal, String role);
+public principal authenticate(String username, String credentials); // -- 일반적으로 사용되는 메소드
+public principal authenticate(String username, byte[] credentials);
+public principal authenticate(String username, String digest, String nonce,
+                              String nc, String cnonce, String qop, String realm, String md5a2);
+public principal authenticate(X509Certificate certs[]);
 ~~~
 
 <br>
