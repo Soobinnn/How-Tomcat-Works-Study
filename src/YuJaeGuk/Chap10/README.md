@@ -20,7 +20,7 @@
 
 <br>
 
-### Realm(영역)
+### Realm (영역)
 
 Realm은 사용자를 인증하는 데 필요한 컴포넌트. 
 
@@ -44,7 +44,7 @@ public principal authenticate(X509Certificate certs[]);
 
 <br>
 
-### GenericPrincipal(주체)
+### GenericPrincipal (주체)
 
 주체란 인증을 받는 실체를 말하며, 사용자나 그룹 등 인증을 받는 어떠한 대상을 가리키며, "java.security.principal" 인터페이스로 나타며, 생성자 메소드에서 볼 수 있듯이 영역과 항상 연결되어있어야 함.
 
