@@ -18,7 +18,7 @@
 
 #### 3장 - 커넥터
 
-#### 4장 - 톰캣의 기본 커넥터
+#### 4장 - [톰캣의 기본 커넥터](https://github.com/Soobinnn/How-Tomcat-Works-Study/tree/master/src/YuJaeGuk/Chap04/README.md)
 
 #### 5장 - [컨테이너](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/ChuYeonHoon/Chap05/README.md)
 
