@@ -30,7 +30,7 @@
 
 #### 9장 - [세션 관리](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/ChuYeonHoon/Chap09/README.md)
 
-#### 10장 - 보안
+#### 10장 - [보안](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/YuJaeGuk/Chap10/README.md)
 
 #### 11장 - [StandardWrapper](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/YangDonghwa/markdown/11.%20StandardWrapper.md)
 
