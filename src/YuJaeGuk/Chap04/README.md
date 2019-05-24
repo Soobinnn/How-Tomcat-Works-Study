@@ -138,9 +138,3 @@ HTTP 1.1 클라이언트에서는 서버에게 데이터 수신 거절 여부를
 커넥터는 반드시 org.apache.catalina.Connector 인터페이스를 구현해야 함.
 
 주로 컨테이너를 연결할 때 사용하는 setContainer, 커넥터와 연결되어있는 컨테이너를 리턴하는 getContainer, HTTP Request에 대한 Request Object를 생성하는 createRequest, Response Object를 생성하는 createResponse가 있다.
-
-<br>
-
-## HttpConnector 클래스
-
-3장의 커넥터와는 다르게 카타리나에서 적절히 동작하기 위해 java.lang.Runnable, org.apache.catalina.Lifecycle을 구현해야 함.
