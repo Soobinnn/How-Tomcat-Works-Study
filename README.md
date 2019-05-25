@@ -5,7 +5,7 @@
 ### - 교재 : 톰캣 최종분석, 자바고양이Tomcat이야기
 ### Study Role
   __- 발표 방식__
-  
+
    1일 3챕터씩 공부 후 1일 챕터별로 발표자 정해서 발표 
 
 ## 톰캣최종분석
@@ -16,7 +16,7 @@
 
 #### 2장 - 간단한 서블릿 컨테이너
 
-#### 3장 - 커넥터
+#### 3장 - [커넥터](<https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/NamGiUng/Chap03/README.md>)
 
 #### 4장 - [톰캣의 기본 커넥터](https://github.com/Soobinnn/How-Tomcat-Works-Study/tree/master/src/YuJaeGuk/Chap04/README.md)
 
@@ -26,7 +26,7 @@
 
 #### 7장 - 로거
 
-#### 8장 - 로더
+#### 8장 - [로더](<https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/NamGiUng/Chap08/README.md>)
 
 #### 9장 - [세션 관리](https://github.com/Soobinnn/How-Tomcat-Works-Study/blob/master/src/ChuYeonHoon/Chap09/README.md)
 
